@@ -1,74 +1,36 @@
-/* const getUsuario = () => ({
- 
-    id: 1234,
-    nombre: 'jose',
-    email : 'jose@gmail.com'
-
-}); */
-/* class Persona{
-    constructor(nombre, edad){
-        this.nombre = nombre || 'juan',
-        this.edad = edad || 18
-    }
-    hablar(){
-        console.log(`${this.nombre} esta hablando`)
-    }
-};
-
-let juan = new Persona;
-
-class Profesor extends Persona{
-    constructor(nombre, edad, tipo){
-        super(nombre, edad)
-        this.tipo = tipo;
-    
-    }
-   tipoFormateado(){
-         return `tipo de contratacion ${this.tipo}`
-    }
-}
-let lucas = new Profesor('lucas',29,'FT') */
-
-let usuarios = [
-        {
-          nombre: 'toni',
-          online: true
-        },
-        {
-          nombre: 'emi',
-          online: true
-        },
-        {
-          nombre: 'agus',
-          online: false
-        }
-    ];
-    function estaOffline(usuarios, nombre) {
-        // La funcion llamada "estaOffline" recibe como argumento un array de objetos llamado 'usuarios' y un string llamada 'nombre'.
-        // cada objeto tiene una property 'nombre' que es un string y otra llamada 'online' que es un booleano.
-        // La función debe retornar true si el usuario se encuentra offline, de lo contrario false.
-        // ej:
-        // var usuarios = [
-        //     {
-        //       nombre: 'toni',
-        //       online: true
-        //     },
-        //     {
-        //       nombre: 'emi',
-        //       online: true
-        //     },
-        //     {
-        //       nombre: 'agus',
-        //       online: false
-        //     }
-        // ];
-        // estaOffline(usuarios, 'agus') retorna true
-        // estaOffline(usuarios, 'emi') retorna false
-      
-        // Tu código aca:
-      for (let index = 0; index < usuarios.length; index++) {
-          const element = usuarios[index];
-          
-      }
-      }
-      estaOffline(usuarios, 'agus')
+const room = [
+    [' ', ' ', ' '],
+    [' ', ' ', 'm'],
+    ['*', ' ', ' ']
+  ]
+const room1 = [
+    [' ', ' ', ' '],
+    [' ', 'm', '*'],
+    ['*', ' ', ' ']
+  ]
+  const room2 = [
+    ['*', ' ', ' ', ' '],
+    [' ', ' ', '*', 'm'],
+    [' ', ' ', ' ', ' '],
+    [' ', ' ', ' ', '*']
+  ]
+function canMouseEat(direction, game) {
+    // ¡Gracias por jugar a AdventJS 2021! 🤗
+    // ¡Nos vemos el año que viene! 👋
+    // Por favor, comparte en las redes qué te ha parecido! 🚀
+    let roomsflat = game.flat();
+    console.log(game[0].length)
+    console.log(roomsflat.indexOf('m'))
+    return direction === 'up' && roomsflat.indexOf('m') - game[0].length === roomsflat.indexOf('*') ? true :
+    direction === 'down' && roomsflat.indexOf('m') + game[0].length === roomsflat.indexOf('*') ? true :
+    direction === 'left' && roomsflat.indexOf('m') - 1 === roomsflat.indexOf('*') && roomsflat.indexOf('m') - 1 % game[0].length === 0 ? true :
+    direction === 'right' && roomsflat.indexOf('m') + 1 === roomsflat.indexOf('*') ? true : false;
+  }
+/* canMouseEat('up',    room)
+canMouseEat('down',  room)
+canMouseEat('right', room)
+canMouseEat('left',  room)
+canMouseEat('up',    room2)
+canMouseEat('down',  room2)
+canMouseEat('right', room2)
+canMouseEat('left',  room2) */
