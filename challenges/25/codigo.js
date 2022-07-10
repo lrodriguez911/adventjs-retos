@@ -18,13 +18,13 @@ function canMouseEat(direction, game) {
     // ¡Gracias por jugar a AdventJS 2021! 🤗
     // ¡Nos vemos el año que viene! 👋
     // Por favor, comparte en las redes qué te ha parecido! 🚀
-    let roomsflat = game.flat();
-    console.log(game[0].length)
-    console.log(roomsflat.indexOf('m'))
-    return direction === 'up' && roomsflat.indexOf('m') - game[0].length === roomsflat.indexOf('*') ? true :
-    direction === 'down' && roomsflat.indexOf('m') + game[0].length === roomsflat.indexOf('*') ? true :
-    direction === 'left' && roomsflat.indexOf('m') - 1 === roomsflat.indexOf('*') && roomsflat.indexOf('m') - 1 % game[0].length === 0 ? true :
-    direction === 'right' && roomsflat.indexOf('m') + 1 === roomsflat.indexOf('*') ? true : false;
+    for (let i = 0; i < game.length; i++) {
+        direction === 'up' && game[i][(i-1).indexOf('*')] ? true :
+        direction === 'down' && game[i][(i+1).indexOf('*') ] ? true :
+        direction === 'right' && game[i][(i).indexOf('*') + 1] ? true :
+        direction === 'left' && game[i][(i).indexOf('*') -1] ? true : false
+    }
+ 
   }
 /* canMouseEat('up',    room)
 canMouseEat('down',  room)
